@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="pa-0">
     <div class="header_bg">
       <div class="header_main d-flex justify-space-between">
         <h1>
@@ -10,8 +10,8 @@
 
         <div class="header-nav d-flex align-center">
           <ul>
-            <li class="mx-4" v-for="item in headerNav" :key="item.title">
-              <a class="text-subtitle-2" href="">{{ item.title }}</a>
+            <li v-for="item in headerNav" :key="item.title">
+              <a class="text-subtitle-2 px-4" href="">{{ item.title }}</a>
             </li>
           </ul>
           <div class="ml-4">
@@ -54,18 +54,18 @@ export default {
       },
     ],
   }),
+  methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
 .header_bg {
+  background-color: #fff;
   height: 68px;
-  background-color: rebeccapurple;
   .header_main {
     margin: 0 auto;
     width: 1200px;
     height: 68px;
-    background-color: #fff;
   }
 
   .logo {
@@ -74,8 +74,14 @@ export default {
   .header-nav {
     & > ul > li {
       display: inline-block;
+
       & > a {
         color: #333;
+        &:hover {
+          padding-bottom: 20px;
+          border-bottom: 5px solid #ff5252;
+          color: #ff5252;
+        }
       }
     }
     .phone-color {
